@@ -1,37 +1,40 @@
 {
-  "name": "quick-nodejs-starter",
-  "version": "0.1.0",
-  "description": "Your own description",
-  "main": "src/index.js",
-  "license": "MIT",
-  "private": true,
-  "scripts": {
-    "setup": "cp .env.example .env || echo 'failed to create .env file, please create it manually from .env.example",
-    "start": "cross-env NODE_ENV=production node src/index.js",
-    "dev": "cross-env NODE_ENV=development DEBUG=app:* nodemon src/index.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "test": "jest --verbose",
-    "test:coverage": "jest --collect-coverage"
-  },
-  "dependencies": {
-    "debug": "^4.2.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.2",
-    "eslint": "^7.10.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.1",
-    "husky": "^4.3.0",
-    "jest": "^26.4.2",
-    "nodemon": "^1.19.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint",
-      "pre-push": "echo 'Your pre push rules goes here'"
-    }
-  }
+	"name": "quick-nodejs-starter",
+	"version": "0.1.0",
+	"description": "Your own description",
+	"main": "src/index.js",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"setup": "cp .env.example .env || echo 'failed to create .env file, please create it manually from .env.example",
+		"start": "cross-env NODE_ENV=production node src/index.js",
+		"dev": "cross-env NODE_ENV=development DEBUG=app:* nodemon src/index.js",
+		"lint": "eslint --fix --ext .js,.jsx .",
+		"validate": "npm run format && npm run lint",
+		"format": "prettier --write \"**/*.+(js|json)\"",
+		"lint:fix": "eslint . --fix",
+		"test": "jest --verbose",
+		"test:coverage": "jest --collect-coverage"
+	},
+	"dependencies": {
+		"debug": "^4.2.0",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"prettier": "^2.2.1"
+	},
+	"devDependencies": {
+		"cross-env": "^7.0.2",
+		"eslint": "^7.10.0",
+		"eslint-config-airbnb-base": "^14.2.0",
+		"eslint-plugin-import": "^2.22.1",
+		"husky": "^4.3.0",
+		"jest": "^26.4.2",
+		"nodemon": "^1.19.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run validate",
+			"pre-push": "echo 'Your pre push rules goes here'"
+		}
+	}
 }
