@@ -12,11 +12,12 @@ I needed a very simple structure for small nodejs applications, so i made one fo
 ## Built With
 * [Express](https://expressjs.com) - Server framework.
 * [Dotenv](https://github.com/motdotla/dotenv) - To manage environment variables across environments.
-* [Debug](https://github.com/visionmedia/debug) - Debug without console.log
+* [Debug](https://github.com/visionmedia/debug) - Debug without console.log.
 * [Jest](https://jestjs.io) - Testing framework.
 * [Nodemon](https://github.com/remy/nodemon) - Monitor for any changes in your node.js application and automatically restart it.
-* [eslint](https://eslint.org) - Find and fix problems in your JavaScript code
-* [husky](https://github.com/typicode/husky) - Manage pre-commit/pre-post git hooks
+* [eslint](https://eslint.org) - Find and fix problems in your JavaScript code.
+* [prettier](https://github.com/prettier/prettier) - Format code with guidlines.
+* [husky](https://github.com/typicode/husky) - Manage pre-commit/pre-post git hooks.
 
 ## Using Docker 
 * For Development
